@@ -1,9 +1,21 @@
 import express from 'express';
 const app = express();
 
-app.get('/', (req, res) => {
+interface Restaurant {
+  name: string;
+  description: string;
+}
+
+app.get('/restaurants', (req, res) => {
   const name = process.env.NAME || 'World';
-  res.send(`Hello ${name}!`);
+  res.send({
+    restaurants: [
+      {
+        name: 'Blue Fin',
+        description: 'Best seafood in town',
+      }
+    ] as Restaurant[]
+  });
 });
 
 const port = parseInt(process.env.PORT || '3000');
