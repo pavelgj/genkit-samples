@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "concurrently npm:start:server npm:start:ng",
+    "start:server": "cd server && npm run dev",
+    "start:ng": "cd angular-app && npm run watch"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
