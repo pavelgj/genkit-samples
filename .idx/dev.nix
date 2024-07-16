@@ -18,11 +18,11 @@
     workspace = {
       # Runs when a workspace is first created with this `dev.nix` file
       onCreate = {
-        npm-install = "pnpm ci --no-audit --prefer-offline --no-progress --timing";
+        npm-install = "pnpm --prefix ./server ci --no-audit --prefer-offline --no-progress --timing";
       };
       # Runs when a workspace is (re)started
       onStart= {
-        run-server = "pnpm dev";
+        run-server = "pnpm  --prefix ./server dev";
       };
     };
   };
